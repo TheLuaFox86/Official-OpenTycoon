@@ -1,4 +1,4 @@
-local otl = require "launch"
+`local otl = require "launch"
 config = otl.getcfg()
 config.di = "\\"
 local function run(p)

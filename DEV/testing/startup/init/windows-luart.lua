@@ -8,3 +8,10 @@ function platform.fs.listdir(p)
     end
     return each(o)
 end
+platform.Zip = {}
+local zip = require "compression"
+function platform.zip.extract(file, to)
+  local z = zip.Zip(sys.File(file, to))
+  z:extractAll(to)
+  z:close()
+end
