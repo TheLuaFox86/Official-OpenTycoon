@@ -2,7 +2,7 @@ local otl = require "launch"
 local lfs = require "lfs"
 local i = 0
 local vers = {}
-for f in lfs.list("./Game/versions") do
+for f in lfs.dir("./Game/versions") do
   if f ~= "." and f ~= ".." then
     i = i + 1
     print("[" .. i .. "]  " .. f)
@@ -18,4 +18,4 @@ cfg.gamep = os.getenv("PWD") .. "/Game"
 cfg.tmpp = tmpd.fullpath
 cfg.platform = "linux-ish"
 otl.configure(cfg)
-otl.launch()
+otl.launch(tmpd.fullpath)
