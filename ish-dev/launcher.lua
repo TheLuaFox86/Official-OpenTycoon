@@ -12,7 +12,7 @@ end
 local a = io.read("*Line")
 local tmpd = otl.extract(vers[tonumber(a)])
 local cfg = {}
-cfg.username = "???"
+cfg.usernname = "???"
 cfg.guid = 0
 cfg.gamep = os.getenv("PWD") .. "/Game"
 cfg.tmpp = tmpd.fullpath

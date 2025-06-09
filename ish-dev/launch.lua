@@ -5,7 +5,7 @@ local function fls(a)
   a('gamep')
   a('di')
   a('username')
-  a('user_guid')
+  a('guid')
 end
 local otl = {}
 function otl.configure(conf)
@@ -26,6 +26,8 @@ function otl.extract(f, p)
   end
 end
 function otl.launch(a, win)
+for i=1, 500 do
+end
 pcall(function()
 config.di = "/"
 local function run(p)
