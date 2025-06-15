@@ -32,7 +32,7 @@ end
 		os.execute("wget '" .. url .. "/" .. fP .. "' '" .. toP .. "'")
 	end
 end
-local repo = "https://raw.githubusercontent.com/TheLuaFox86/Offical-OpenTycoon/main"
+local repo = "https://raw.githubusercontent.com/TheLuaFox86/Official-OpenTycoon/main"
 print("type The Version Name You Want to get ie: alpha5/Alpha5-forge")
 a = io.read('*l')
 wg(repo, a .. '.zip', arg[1] .. '/versions/' .. a:split("/")[2] .. '.zip')
