@@ -9,7 +9,8 @@ apk add nano
 git clone https://github.com/TheLuaFox86/Official-OpenTycoon.git
 mkdir ./OpenTycoon
 unzip ./Official-OpenTycoon/launcher/ISH-launcher.zip -d ./OpenTycoon
-cp ./Official-OpenTycoon/launcher/start.sh ./OT.sh
+cp ./Official-OpenTycoon/launcher/start.sh /bin/OT.sh
+chmod +x /bin/OT.sh
 mkdir OpenTycoon/Game
 mkdir OpenTycoon/Game/versions
 cp Official-OpenTycoon/Versions/alpha5/Alpha5.zip OpenTycoon/Game/versions
