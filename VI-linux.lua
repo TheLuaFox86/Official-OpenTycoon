@@ -3,6 +3,26 @@ if io.read('*l') ~= "gotv" then
 	return
 end
 do
+	_G.string.split = function(txt, del)
+	local out = {}
+	local c = 0
+	local a = ""
+	i = 0
+	for _=1, #txt do
+		i = i + 1
+		if txt:sub(i , i + (#del - 1)) == del then
+			c = c + 1
+			out[c] = a
+			a = ""
+			i = i + (#del - 1)
+		else
+			--print(txt:sub(i, i + (#del - 1)))
+			a = a .. txt:sub(i, i)
+		end
+	end
+	out[c + 1] = a
+	return out
+end
 	local iowrite = _G.io.write
 	_G.io.write = function(...)
 		iowrite(...)
@@ -12,8 +32,8 @@ do
 		os.execute("wget '" .. url .. "/" .. fP .. "' '" .. toP .. "'")
 	end
 end
-local repo = "https://raw.githubusercontent.com/TheLuaFox86/Offical-OpenTycoon/main"
-print("type The Version Name You Want to get ie: Alpha5-forge")
+local repo = "https://raw.githubusercontent.com/TheLuaFox86/Official-OpenTycoon/main"
+print("type The Version Name You Want to get ie: alpha5/Alpha5-forge")
 a = io.read('*l')
-wg(repo, a .. '.zip', arg[1] .. '/versions/' .. a .. '.zip')
+wg(repo, a .. "/Versions/" .. '.zip', arg[1] .. '/versions/' .. a:split("/")[2] .. '.zip')
 
