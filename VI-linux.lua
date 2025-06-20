@@ -35,6 +35,6 @@ end
 local repo = "https://github.com/TheLuaFox86/Official-OpenTycoon/raw/main"
 print("type The Version Name You Want to get ie: alpha5/Alpha5-forge")
 a = io.read('*l')
-print(repo .. a .. "/Versions/" .. a .. '.zip', arg[1] .. '/versions/' .. a:split("/")[2] .. '.zip')
-wg(repo, a .. "/Versions/" .. a .. '.zip', arg[1] .. '/versions/' .. a:split("/")[2] .. '.zip')
+print(repo .. "/Versions/" .. a .. '.zip', arg[1] .. '/versions/' .. a:split("/")[2] .. '.zip')
+wg(repo, "/Versions/" .. a .. '.zip', arg[1] .. '/versions/' .. a:split("/")[2] .. '.zip')
 
