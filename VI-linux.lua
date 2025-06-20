@@ -29,7 +29,7 @@ end
 		io.flush()
 	end
 	function wg(url, fP, toP)
-		os.execute("wget '" .. url .. "/" .. fP .. "' '" .. toP .. "'")
+		os.execute("wget '" .. url .. "/" .. fP .. "' -D '" .. toP .. "'")
 	end
 end
 local repo = "https://github.com/TheLuaFox86/Official-OpenTycoon/raw/main"
