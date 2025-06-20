@@ -1,2 +1,19 @@
 <title> OpenTycoon </title>
 <p> Install On Ipad/Iphone using <a href="https://apps.apple.com/app/id1436902243"> iSh App</a> <textarea id='iish'> |Error| </textarea> </p>
+<script>
+document.getElementById("iish").value = fetch('https://example.com/api/data')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json(); // or response.text() for text
+  })
+  .then(data => {
+    // Process the data here
+    console.log(data);
+  })
+  .catch(error => {
+    // Handle any errors
+    console.error('Fetch error:', error);
+  });
+</script>

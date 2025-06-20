@@ -2,15 +2,30 @@ local game = {}
 game.domain = 'opentycoon'
 game.type = 'game'
 game.money = 10000
-game.version = 'Alpha2'
+game.version = 'Alpha6'
 game.username = config.username
 class:append(game)
 class.opentycoon.item:item({
-    id='paperclip',
+    id = 'paperclip',
     price = 100,
-    profit=1.25,
-    amount=0
+    profit = 1.25,
+    amount = 0
 })
+
+class.opentycoon.item:item({
+    id = 'okacheese',
+    price = 799,
+    profit = 1.25,
+    amount = 0
+})
+
+class.opentycoon.item:item({
+    id = 'crap',
+    price = 4566,
+    profit = 1.25,
+    amount = 0
+})
+
 class.opentycoon.command:command("buy", function(id, a)
   for i=1, tonumber(a) do
     local a = class:getById('item', id)

@@ -6,5 +6,5 @@ while go do
   if a == 'exit' then go = false return end
   b = string.split(a, " ")
   c = table.unpack(b, 1, 1)
-  pcall(class.opentycoon.command[c], table.unpack(b, 2, b.n))
+  pcall(class.opentycoon.command[c], table.unpack(b, 2, #c))
 end

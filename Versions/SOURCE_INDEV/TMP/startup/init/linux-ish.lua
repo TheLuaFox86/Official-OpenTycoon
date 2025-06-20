@@ -45,7 +45,7 @@ function platform.fs.listdir(p)
 	end
 	return each(a)
 end
-platform.Zip = {}
-function platform.Zip.extract(file, to)
+platform.zip = {}
+function platform.zip.extract(file, to)
   os.execute('unzip -o "' .. file .. '" -d "' .. to .. '"')
 end
