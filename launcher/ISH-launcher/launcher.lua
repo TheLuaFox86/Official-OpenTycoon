@@ -18,4 +18,5 @@ cfg.gamep = os.getenv("PWD") .. "/Game"
 cfg.tmpp = tmpd.fullpath
 cfg.platform = "linux-ish"
 otl.configure(cfg)
+os.execute("clear")
 print(otl.launch(tmpd.fullpath))

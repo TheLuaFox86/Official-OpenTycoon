@@ -14,14 +14,14 @@ end
 
 function otl.extract(f, p)
   if p then
-    os.execute('unzip -o "' .. f .. '" -d "' .. p .. '"')
+    os.execute('unzip -qq -o "' .. f .. '" -d "' .. p .. '"')
     return
   else
     local dir = os.getenv("PWD") .. "/TEMP"
     local out = {
       fullpath = dir,
     }
-    os.execute('unzip -o "' .. f .. '" -d "' .. dir .. '"')
+    os.execute('unzip -qq -o "' .. f .. '" -d "' .. dir .. '"')
     return out
   end
 end
@@ -39,6 +39,7 @@ end
 _log = _log .. "\n"
 end
 log(pcall(function()
+print('launching...')
 config.di = "/"
 local function run(p)
   dofile(config.tmpp .. p)
@@ -50,6 +51,7 @@ pcall(function()
   run(pluginp .. config.di .. "init.lua")
 end)
 run(config.di .. "startup" .. config.di .. "classloader.lua")
+print("Done!")
 run(config.di .. "startup" .. config.di .. "cmd.lua")
 end))
 os.execute("rm -r ./TEMP")
