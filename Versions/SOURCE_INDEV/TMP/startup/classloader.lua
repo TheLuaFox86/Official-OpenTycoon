@@ -4,6 +4,7 @@ function class:append(tb)
   self[tb.domain][tb.type] = tb
 end
 function class:getById(t, id)
+	log(t)
   local a = {}
   for i, v in ipairs(id:split(":")) do
     a[i]=v
@@ -12,6 +13,7 @@ function class:getById(t, id)
     a[2] = a[1]
     a[1] = "opentycoon"
   end
+  log(a[1], a[2])
   return self[a[1]][t][a[2]]
 end
 function class:setById(t, id, val)
@@ -32,7 +34,7 @@ log(pcall(function()
     dofile(pluginp .. config.di .. 'init4mods.lua')
 end))
 log("Loading Classes")
-for i=-99, 1098  do
+for i=-99, 299  do
 for a in platform.fs.listdir(config.tmpp .. config.di .. "class") do
   log(a, i)
   if tonumber(a:sub(1, 3)) == i then

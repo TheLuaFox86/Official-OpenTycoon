@@ -12,11 +12,23 @@ end
 local a = io.read("*Line")
 local tmpd = otl.extract(vers[tonumber(a)])
 local cfg = {}
-cfg.usernname = "???"
+cfg.username = ""
 cfg.guid = 0
 cfg.gamep = os.getenv("PWD") .. "/Game"
 cfg.tmpp = tmpd.fullpath
 cfg.platform = "linux-ish"
+pcall(function()
+local f = io.open("Account.otla")
+local account = load('return ' .. f:read("*a"), '=account', 't')()
+f:flush()
+f:close()
+cfg.username = account.user
+cfg.guid = account.guid
+end)
 otl.configure(cfg)
 os.execute("clear")
-print(otl.launch(tmpd.fullpath))
+local _log = otl.launch(tmpd.fullpath)
+local f = io.open("latestlog.txt", "w+")
+f:write(_log)
+f:flush()
+f:close()

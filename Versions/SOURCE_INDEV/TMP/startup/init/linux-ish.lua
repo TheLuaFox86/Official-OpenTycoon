@@ -1,4 +1,7 @@
 _G.platform = {}
+_G.cls = function()
+	os.execute("clear")
+end
 local lfs = require "lfs"
 platform.fs = {}
 _G.string.split = function(txt, del)
@@ -25,6 +28,19 @@ local iowrite = _G.io.write
 _G.io.write = function(...)
 iowrite(...)
 io.flush()
+end
+platform.readtext = function(path)
+	local f = io.open(path, "r")
+	local dat = f:read('*a')
+	f:flush()
+	f:close()
+	return dat
+end
+platform.writetext = function(path, data)
+	local f = io.open(path, "w+")
+	f:write(data)
+	f:flush()
+	f:close()
 end
 _G.each = function(a)
 	i = 0
